@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import classes from "./info.module.css";
 import infoImage from "../../assets/images/info-image.webp";
 import {
@@ -112,6 +113,12 @@ const Info = () => {
                             Only connect to verified SME/Investor
                         </p>
                     </div>
+                </div>
+                <div className={classes.Ready}>
+                    <h2>Ready To Make That Connection?</h2>
+                    <Link to='/register' className={classes.Register}>
+                        Get Started For Free
+                    </Link>
                 </div>
             </div>
         </>
