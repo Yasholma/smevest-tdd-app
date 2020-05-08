@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Login /> should render login component 1`] = `
+<div
+  className="Login"
+>
+  <div
+    className="Container"
+  >
+    <h2>
+      Login To SmeVest
+    </h2>
+    <form
+      className="Form"
+      onSubmit={[Function]}
+    >
+      <div
+        className="FormGroup"
+      >
+        <input
+          id="email"
+          name="email"
+          onChange={[Function]}
+          placeholder="Email Address"
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        className="FormGroup"
+      >
+        <input
+          id="password"
+          name="password"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+      </div>
+      <div
+        className="FormButtons"
+      >
+        <div
+          className="OAuthLinks"
+        >
+          <h4>
+            Login Options
+          </h4>
+          <FacebookIcon
+            style={
+              Object {
+                "background": "#3b5998",
+                "borderRadius": "50%",
+                "color": "#fff",
+                "cursor": "pointer",
+                "margin": "0 5px",
+                "padding": 5,
+              }
+            }
+          />
+          <MailIcon
+            style={
+              Object {
+                "background": "#D44638",
+                "borderRadius": "50%",
+                "color": "#fff",
+                "cursor": "pointer",
+                "margin": "0 5px",
+                "padding": 5,
+              }
+            }
+          />
+        </div>
+        <button
+          type="submit"
+        >
+          Login
+        </button>
+      </div>
+      <p>
+        Don't have an account yet?
+         
+        <Link
+          to="/register"
+        >
+          Register
+        </Link>
+      </p>
+    </form>
+  </div>
+</div>
+`;

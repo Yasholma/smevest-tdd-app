@@ -3,11 +3,11 @@
     min-height: 40vh;
     height: auto;
     background: #eee;
-    padding: 10rem 0;
+    padding: 10rem 0 5rem;
     position: relative;
 }
 
-.Info .Container {
+.Container {
     width: 85%;
     margin: 0 auto;
 }
@@ -181,6 +181,64 @@
     }
 }
 
+/* Info Section 2 */
+.Info2 {
+    width: 100%;
+    padding: 8rem 0;
+    box-sizing: border-box;
+}
+
+.Info2 .Container {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.LeftImage {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: url("../../assets/images/info2.webp");
+    background-size: contain;
+    background-position: center right;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-iteration-count: 3;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in-out;
+    align-self: center;
+}
+
+.Info2Details h2 {
+    font-size: 2rem;
+    color: #aaa;
+}
+
+.Info2Details p {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.Info2Details p svg {
+    margin-right: 0.5rem;
+    border-right: 2px solid #47d486;
+    padding-right: 0.3rem;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 @media screen and (max-width: 425px) {
     .Info .InfoSocial {
         position: absolute;
@@ -212,5 +270,30 @@
 
     .Info .Details div:nth-child(2):hover {
         margin-left: 0;
+    }
+
+    .Info2 {
+        padding: 5rem 0;
+    }
+
+    .Info2 .Container {
+        grid-template-columns: 1fr;
+    }
+
+    .LeftImage {
+        order: 2;
+        margin-top: 2rem;
+    }
+
+    .Info2Details h2 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .Info2Details p {
+        margin: 2.5rem 0;
+        align-items: flex-start;
+        font-size: 1rem;
+        text-align: left;
     }
 }
