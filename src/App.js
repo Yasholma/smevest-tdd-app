@@ -8,6 +8,7 @@ import Header from "./components/header/header.component";
 import Home from "./containers/home/home";
 import Login from "./components/login/login.component";
 import Register from "./components/register/register.component";
+import Footer from "./components/footer/footer.component";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path='/' exact component={Home} />
                 <Route path='/login' component={Login} />
                 <Route path='/register' component={Register} />
+                <Footer />
             </BrowserRouter>
         </ReduxProvider>
     );
