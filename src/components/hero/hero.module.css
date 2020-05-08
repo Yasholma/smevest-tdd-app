@@ -1,0 +1,73 @@
+.Hero {
+    width: 100%;
+    height: 60vh;
+    background: url("../../assets/images/hero.webp");
+    background-size: 55% 80%;
+    background-repeat: no-repeat;
+    background-position: top right -10%;
+    margin: 3rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0 7rem;
+}
+
+.Hero .GetStarted {
+    width: 40%;
+    margin-left: 8%;
+    margin-top: -5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Hero h1 {
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    text-align: center;
+    color: #212226;
+}
+
+.Hero .Register {
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.4rem 1.5rem;
+    transition: all 300ms linear;
+    background: #4ad6e9;
+    border-radius: 1rem;
+    color: #fff;
+    box-shadow: 0 2px 1px #1fc2d8, 0 -1px 1px #1fc2d8;
+    border: 1px solid #4ad6e9;
+}
+
+.Hero .Register:hover {
+    background: transparent;
+    color: #212226;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.7), 0px 0px #fff;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 425px) {
+    .Hero {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin: 1rem 0 0rem;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0rem 0 15rem;
+    }
+
+    .Hero .GetStarted {
+        width: 90%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .Hero h1 {
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+}

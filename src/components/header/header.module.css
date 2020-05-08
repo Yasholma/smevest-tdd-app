@@ -1,0 +1,67 @@
+.Header {
+    width: 100%;
+    height: 95px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    padding: 0.5rem 0;
+}
+
+.Header .Container {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Header a {
+    text-decoration: none;
+}
+
+.Header a > img {
+    width: 80px;
+    height: auto;
+    max-width: 100%;
+}
+
+.Header .NavigationList {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Header .NavigationList a {
+    font-size: 0.95rem;
+    padding: 0.4rem 1.5rem;
+    transition: all 300ms linear;
+}
+
+.Header .Login {
+    color: #928d8d;
+}
+
+.Header .Login:hover {
+    color: #212226;
+    text-decoration: underline;
+    text-decoration-color: #212226;
+}
+
+.Header .Register {
+    background: #4ad6e9;
+    border-radius: 1rem;
+    color: #fff;
+    box-shadow: 0 2px 1px #1fc2d8, 0 -1px 1px #1fc2d8;
+    border: 1px solid #4ad6e9;
+}
+
+.Header .Register:hover {
+    background: transparent;
+    color: #212226;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.7), 0px 0px #fff;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 425px) {
+    .Header .Container {
+        width: 90%;
+    }
+}

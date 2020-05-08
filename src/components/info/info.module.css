@@ -1,0 +1,216 @@
+.Info {
+    width: 100%;
+    min-height: 40vh;
+    height: auto;
+    background: #eee;
+    padding: 10rem 0;
+    position: relative;
+}
+
+.Info .Container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.Info .InfoSocial {
+    position: absolute;
+    border-radius: 1rem;
+    background: #fff;
+    width: 400px;
+    right: 7rem;
+    top: -3.8rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0 0.5rem;
+    box-shadow: 0 0 0.5rem #ddd;
+}
+
+.Info .Icon path {
+    animation-name: zoom;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.Info .Icon p {
+    margin: 0.3rem 0;
+    font-size: 1.1rem;
+    font-family: "Karla", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.Info .Icon:not(:last-child) {
+    border-right: 1px solid #eee;
+    padding-right: 2rem;
+}
+
+.Info .InfoDetails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.Info .Details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Info .Details div {
+    padding: 1rem;
+    background: #fff;
+    border-radius: 0.35rem;
+    height: 80px;
+    width: 280px;
+    margin: -2rem 0 4rem;
+    transition: all 500ms ease;
+}
+
+.Info .Details div:nth-child(1) {
+    box-shadow: 0 -3px 0 #d4475a;
+    margin-left: -10rem;
+}
+
+.Info .Details div:nth-child(1) h2 svg {
+    color: #d4475a;
+}
+
+.Info .Details div:nth-child(1):hover {
+    box-shadow: 0 -3px 0 #fff;
+    background: #d4475a;
+    color: #fff;
+    margin-left: 0;
+}
+
+.Info .Details div:nth-child(1):hover p,
+.Info .Details div:nth-child(2):hover p,
+.Info .Details div:nth-child(3):hover p {
+    color: #fff;
+}
+
+.Info .Details div:nth-child(2) {
+    box-shadow: 0 -3px 0 #47d486;
+}
+
+.Info .Details div:nth-child(2) h2 svg {
+    color: #47d486;
+}
+
+.Info .Details div:nth-child(2):hover {
+    box-shadow: 0 -3px 0 #fff;
+    background: #47d486;
+    color: #fff;
+    margin-left: -10rem;
+}
+
+.Info .Details div:nth-child(3) {
+    box-shadow: 0 -3px 0 #4789d4;
+    margin-left: -10rem;
+}
+
+.Info .Details div:nth-child(3) h2 svg {
+    color: #4789d4;
+}
+
+.Info .Details div:nth-child(3):hover {
+    box-shadow: 0 -3px 0 #fff;
+    background: #4789d4;
+    color: #fff;
+    margin-left: 0;
+}
+
+.Info .Details div:nth-child(1):hover svg,
+.Info .Details div:nth-child(2):hover svg,
+.Info .Details div:nth-child(3):hover svg {
+    color: #fff;
+}
+
+.Info .Details div h2,
+.Info .Details div p {
+    margin: 0;
+    font-family: "Baloo 2", sans-serif;
+}
+
+.Info .Details div h2 {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Info .Details div h2 svg {
+    margin-right: 0.3rem;
+}
+
+.Info .Details div p {
+    color: #b6b0b0;
+    font-family: Karla, sans-serif;
+    margin: 0.3rem 0;
+}
+
+.Info .Image img {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 2px 2px 0.3rem rgba(0, 0, 0, 0.2),
+        -2px 0 0.3rem rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1.04);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .Info .InfoSocial {
+        position: absolute;
+        width: 350px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .Info .Icon p {
+        font-size: 0.95rem;
+    }
+
+    .Info .InfoDetails {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .Info .Details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .Info .Details div:nth-child(1),
+    .Info .Details div:nth-child(3) {
+        margin-left: 0rem;
+    }
+
+    .Info .Details div:nth-child(2):hover {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,100 @@
+.Register {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.Register h2 {
+    font-size: 1.8rem;
+    margin: 0 0 1rem;
+}
+
+.Container {
+    box-sizing: border-box;
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.Form {
+    width: 320px;
+    min-height: 20vh;
+    background: #1fc2d8;
+    box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.7);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding: 2rem 1rem 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.FormGroup {
+    margin-bottom: 1.4rem;
+}
+
+.FormGroup input,
+.FormGroup select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    border-radius: 0.35rem;
+    font-size: 0.96rem;
+    font-family: inherit;
+}
+
+.FormGroup select option:first-child {
+    color: #ccc;
+}
+
+.FormGroup select option {
+    font-size: 1rem;
+    border-radius: 1rem;
+}
+
+.FormButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.FormButtons {
+    margin: 1rem 0 0.5rem;
+}
+
+.OAuthLinks h4 {
+    color: #eee;
+    margin: -0.2rem 0 0.5rem 0.2rem;
+    font-size: 0.8rem;
+    font-weight: 100;
+}
+
+.FormButtons button {
+    border: 0;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    transition: all 400ms ease-in-out;
+}
+
+.FormButtons button:hover {
+    background: #fff;
+    border-color: #1fc2d8;
+    color: #1fc2d8;
+}
+
+@media screen and (max-width: 425px) {
+}
