@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import classes from "./info.module.css";
 import infoImage from "../../assets/images/info-image.webp";
@@ -12,7 +13,7 @@ import {
     Message,
 } from "@material-ui/icons";
 
-const Info = () => {
+const Info = ({ currentUser }) => {
     return (
         <>
             <div className={classes.Info}>
@@ -114,15 +115,22 @@ const Info = () => {
                         </p>
                     </div>
                 </div>
-                <div className={classes.Ready}>
-                    <h2>Ready To Make That Connection?</h2>
-                    <Link to='/register' className={classes.Register}>
-                        Get Started For Free
-                    </Link>
-                </div>
+
+                {!currentUser && (
+                    <div className={classes.Ready}>
+                        <h2>Ready To Make That Connection?</h2>
+                        <Link to='/signup' className={classes.SignUp}>
+                            Get Started For Free
+                        </Link>
+                    </div>
+                )}
             </div>
         </>
     );
 };
 
-export default Info;
+const mapStateToProps = ({ user }) => ({
+    currentUser: user.currentUser,
+});
+
+export default connect(mapStateToProps)(Info);

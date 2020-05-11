@@ -1,29 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import classes from "./login.module.css";
-import { Facebook, Mail } from "@material-ui/icons";
+import classes from "./signin.module.css";
+import { Mail } from "@material-ui/icons";
+import { signInAuth } from "../../redux/actions/auth-actions";
+import { connect } from "react-redux";
+import { signInWithGoogle } from "../../firebase/firebase.utils";
 
-class Login extends React.Component {
+class SignIn extends React.Component {
     state = {
         email: "",
         password: "",
-        role: "",
     };
+
+    componentWillMount() {
+        this.setState({ email: "", password: "" });
+    }
 
     handleChange = e => {
         const { name, value } = e.target;
         this.setState({ [name]: value });
     };
+
     handleSubmit = e => {
         e.preventDefault();
-        console.log("Submit");
+        const { email, password } = this.state;
+
+        this.props.onSignIn(email, password);
+
+        this.setState({
+            email: "",
+            password: "",
+        });
     };
 
     render() {
+        const { loading, error } = this.props;
         return (
-            <div className={classes.Login}>
+            <div className={classes.SignIn}>
                 <div className={classes.Container}>
-                    <h2>Login To SmeVest</h2>
+                    <h2>SignIn To SmeVest</h2>
+                    {error && error.any && (
+                        <h3 className={classes.GeneralError}>{error.any}</h3>
+                    )}
                     <form onSubmit={this.handleSubmit} className={classes.Form}>
                         <div className={classes.FormGroup}>
                             <input
@@ -47,17 +65,7 @@ class Login extends React.Component {
                         </div>
                         <div className={classes.FormButtons}>
                             <div className={classes.OAuthLinks}>
-                                <h4>Login Options</h4>
-                                <Facebook
-                                    style={{
-                                        margin: "0 5px",
-                                        color: "#fff",
-                                        background: "#3b5998",
-                                        padding: 5,
-                                        borderRadius: "50%",
-                                        cursor: "pointer",
-                                    }}
-                                />
+                                <h4>Sign In Option</h4>
                                 <Mail
                                     style={{
                                         margin: "0 5px",
@@ -67,13 +75,20 @@ class Login extends React.Component {
                                         borderRadius: "50%",
                                         cursor: "pointer",
                                     }}
+                                    onClick={signInWithGoogle}
                                 />
                             </div>
-                            <button type='submit'>Login</button>
+                            {loading ? (
+                                <div className={classes.Loading}>
+                                    <span></span>
+                                </div>
+                            ) : (
+                                <button type='submit'>Sign In</button>
+                            )}
                         </div>
                         <p>
                             Don't have an account yet?{" "}
-                            <Link to='/register'>Register</Link>
+                            <Link to='/signup'>SignUp</Link>
                         </p>
                     </form>
                 </div>
@@ -82,4 +97,13 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+const mapStateToProps = ({ auth }) => ({
+    loading: auth.loading,
+    error: auth.error,
+});
+
+const mapDispatchToProps = dispatch => ({
+    onSignIn: (email, password) => dispatch(signInAuth(email, password)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
